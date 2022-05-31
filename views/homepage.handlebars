@@ -1,0 +1,16 @@
+<div class="main-section-div">
+  <!-- Loop over each object in the blogs array -->
+  {{#each blogs as |blog| }}
+  <div class="blog-card">
+    <div class="blog-card-banner">
+      <h2>
+        <a class="blog-card-banner" href="/blog/{{blog.id}}">{{blog.title}}</a>
+      </h2>
+      <p>Posted by {{blog.user.name}} on {{format_date blog.date_created}}</p>
+    </div>
+    <p>
+      {{blog.description}}
+    </p>
+  </div>
+  {{/each}}
+</div>

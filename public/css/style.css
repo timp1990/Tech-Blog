@@ -1,0 +1,65 @@
+:root {
+  --darkColor: #2a1407;
+  --lightColor: #c9eccc;
+}
+
+header,
+.project:not(:last-child) {
+  border-bottom: 1px solid #ccc;
+  background-color: var(--darkColor);
+  color: var(--lightColor);
+  padding-left: 10px;
+}
+
+main {
+  background-color: var(--lightColor);
+  padding: 10px;
+  margin: 0px;
+  width: 100%
+}
+
+.main-section-div {
+  background-color: var(--lightColor);
+}
+
+.headingTextClass {
+  background-color: var(--lightColor);
+  color: var(--darkColor);
+  width: 250px;
+  height: 50px;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+  box-shadow: 5px 5px #888888;
+}
+
+.no-button {
+  background: none;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+  color: var(--lightColor);
+  text-decoration: none;
+  font-size: 100%;
+}
+
+.no-button:hover {
+  color: #065b83;
+  text-decoration: underline;
+}
+
+.blog-card {
+  border: 5px solid var(--darkColor);
+  margin: 10px;
+  padding: 0px;
+}
+
+.blog-card-banner {
+  background-color: var(--darkColor);
+  color: var(--lightColor);
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+  display: inline-block;
+  justify-content: center;
+}

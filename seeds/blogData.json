@@ -1,0 +1,17 @@
+[
+  {
+    "title": "Why is MVC Important",
+    "description": "MVC aallows developers to maintain a true separation of concerns.",
+    "date_created": "5/8/2020"
+  },
+  {
+    "title": "Authentication vs Authorisation",
+    "description": "There is a difference between authentication and authorization.",
+    "date_created": "6/8/2020"
+  },
+  {
+    "title": "Object Relational Mapping",
+    "description": "I love ORMs. It's really simplified the way I create queries in SQL",
+    "date_created": "7/8/2020"
+  }
+]

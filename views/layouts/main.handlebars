@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tech Blog</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div class="flex-column justify-space-around w-100">
+    <header class="display-flex align-center p-2">
+      <nav class="px-2 mx-2">
+        <button class="no-button" id="home-button">Home</button>
+        <!-- Conditionally render login or logout links -->
+        {{#if logged_in}}
+        <a href="/profile">Dashboard/Profile</a> |
+        <button class="no-button" id="logout">Logout</button>
+        {{else}}
+        <a class="no-button" href="/login">Login</a>
+        {{/if}}
+      </nav>
+      <h1 class="headingTextClass">
+        Tech Blog
+      </h1>
+
+    </header>
+    <main>
+      <div class="container container-fluid mt-5">
+        <!-- Render the sub layout -->
+        {{{ body }}}
+      </div>
+    </main>
+    <footer>
+
+    </footer>
+  </div>
+
+  <!-- Render script for logged in users only -->
+  {{#if logged_in}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
+
+  <script src="/js/takeHome.js"></script>
+</body>
+
+</html>
