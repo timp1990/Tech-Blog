@@ -1,0 +1,16 @@
+[
+  {
+    "title": "I agree",
+    "description": "MVC is important",
+    "date_created": "9/8/2020",
+    "blog_id": 1,
+    "user_id": 1
+  },
+  {
+    "title": "I disagree",
+    "description": "They are the same",
+    "date_created": "10/8/2020",
+    "blog_id": 2,
+    "user_id": 2
+  }
+]

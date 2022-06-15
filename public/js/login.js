@@ -12,13 +12,18 @@ const loginFormHandler = async (event) => {
       body: JSON.stringify({ email, password }),
       headers: { 'Content-Type': 'application/json' },
     });
-
+    // Not reloading the page *************************************************************************************************************
     if (response.ok) {
       // If successful, redirect the browser to the profile page
-      document.location.replace('/profile');
+      setTimeout(() => {
+        document.location.replace('/profile');
+      }, 200)
+
+
     } else {
       alert(response.statusText);
     }
+    // ******************************************************************************************
   }
 };
 

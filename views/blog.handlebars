@@ -1,9 +1,56 @@
-<div class="text-center">
-  <h2>{{title}}</h2>
-  <p>{{{get_emoji}}}</p>
+<div class="text-center blog-card">
+  <h2 class="blog-card-banner">{{title}}</h2>
   <p>{{description}}</p>
   <p>Created by {{user.name}} on {{format_date date_created}}</p>
-  <p>
-    <button class="btn btn-primary">Fund this Project!</button>
-  </p>
+  {{#if managedByLoggedIn}}
+  <button class="btn btn-sm btn-danger" data-id="{{id}}">DELETE</button>
+  <button class="btn btn-sm btn-secondary" data-id="{{id}}">EDIT</button>
+  {{/if}}
 </div>
+
+{{!-- Hidden Edit blog section --}}
+<div id="edit-blog-form-div" style="display: none;">
+  <div class="row mt-4">
+    <div class="col-md-6 blog-card">
+      <h3 class="blog-card-banner">Edit blog:</h3>
+
+      <form class="form edit-blog-form">
+        <div class="form-group">
+          <label for="edit-blog-title">Blog Title:</label>
+          <input class="form-input" type="text" id="edit-blog-title" name="blog-title" />
+        </div>
+        <div class="form-group">
+          <label for="edit-blog-desc">Description:</label>
+          <textarea class="form-input" id="edit-blog-desc" name="edit-blog-desc"></textarea>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary">Edit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+{{!-- Render the existing comments --}}
+<h3>Comments: </h3>
+<div id="existing-comments" class="text-center blog-card">
+  {{#each comments as |comment|}}
+  {{> commentCard}}
+  {{/each}}
+</div>
+
+{{#if logged_in}}
+<div id="create-comment-section">
+  <form id="create-comment-form">
+    <div class="form-group">
+      <label for="comment-Title">Comment Title: </label>
+      <input type="text" class="form-control" id="comment-title" placeholder="Enter title">
+      <label for="comment-content">Comment Text: </label>
+      <input type="text" class="form-control" id="comment-content" placeholder="Enter comment">
+      <small id="textHelp" class="form-text text-muted">Your comment will be visible to the public.</small>
+    </div>
+    <button id="leave-comment-button" type="submit" class="btn btn-secondary">Submit</button>
+  </form>
+</div>
+<script src="/js/blogView.js" defer></script>
+{{/if}}

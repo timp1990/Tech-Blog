@@ -13,7 +13,9 @@ const signupFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('/profile');
+      setTimeout(() => {
+        document.location.replace('/profile');
+      }, 200)
     } else {
       alert(response.statusText);
     }
