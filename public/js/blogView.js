@@ -73,8 +73,8 @@ const editFormHandler = async (event) => {
 
     const response = await fetch(`/api/blogs/${thisBlogID}/`, {
         method: 'PUT',
-        body: JSON.stringify({ title, description }),
         headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ title, description }),
     });
 
     if (response.ok) {
