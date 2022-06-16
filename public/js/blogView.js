@@ -59,33 +59,28 @@ if (document.querySelector('.btn-danger')) {
 // toggle edit blog form on 
 function editBlogFormVisible() {
     editBlogFormDiv.removeAttribute('style')
-    document
-        .querySelector('.edit-blog-form')
-        .addEventListener('submit', editFormHandler);
+    document.getElementById('submit-edit-blog-button').addEventListener('click', editFormHandler);
 }
 
 
 // Edit functionality --------------------------------------
 const editFormHandler = async (event) => {
-    if (event.target.hasAttribute('data-id')) {
-        const id = event.target.getAttribute('data-id');
 
-        let title = document.getElementById('edit-blog-title').value.trim();
-        let description = document.getElementById('edit-blog-desc').value.trim();
+    let title = document.getElementById('edit-blog-title').value.trim();
+    let description = document.getElementById('edit-blog-desc').value.trim();
 
-        console.log(title, description)
+    console.log(title, description)
 
-        const response = await fetch(`/api/blogs/${thisBlogID}`, {
-            method: 'PUT',
-            body: JSON.stringify({ title, description }),
-            headers: { 'Content-Type': 'application/json' },
-        });
+    const response = await fetch(`/api/blogs/${thisBlogID}/`, {
+        method: 'PUT',
+        body: JSON.stringify({ title, description }),
+        headers: { 'Content-Type': 'application/json' },
+    });
 
-        if (response.ok) {
-            document.location.replace('/profile');
-        } else {
-            alert('Failed to edit blog');
-        }
+    if (response.ok) {
+        document.location.replace('/profile');
+    } else {
+        alert('Failed to edit blog');
     }
 };
 

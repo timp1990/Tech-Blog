@@ -36,7 +36,7 @@ router.delete('/:id', withAuth, async (req, res) => {
 });
 
 // Edit blog route
-router.put('/:id', async (req, res) => {
+router.put('/:id', withAuth, async (req, res) => {
 
   try {
     const blogData = await Blog.update(
